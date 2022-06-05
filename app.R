@@ -32,7 +32,7 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                   
                   tabPanel("Table",
                            sidebarPanel(
-                             tags$label(h3('Input parameters')),
+                             tags$label(h3('What song do u like?')),
                              selectInput("genre", label = "Genre:", 
                                           unique(music$genre)
                                           
