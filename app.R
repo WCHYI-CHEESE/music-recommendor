@@ -59,7 +59,7 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                   tabPanel(
                     "Rating",
                     mainPanel(
-                      h1("Top 60 Music Rating"),
+                      h1("Top 50 Music Rating"),
                       plotOutput("plot")
                     )
                     
@@ -74,7 +74,7 @@ server<- function(input, output) {
   
   output$plot <- renderPlot({
     new_table %>%
-      top_n(60) %>% 
+      top_n(50) %>% 
       ggplot(aes(x = reorder(title, n), y = n, fill = title)) + 
       geom_col() + 
       coord_flip() + 
