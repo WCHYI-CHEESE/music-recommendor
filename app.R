@@ -30,9 +30,9 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                         align="justify")
                   ),
                   
-                  tabPanel("Table",
+                  tabPanel("Recommendation",
                            sidebarPanel(
-                             tags$label(h3('What song do u like?')),
+                             tags$label(h3('What songs do you like?')),
                              selectInput("genre", label = "Genre:", 
                                           unique(music$genre)
                                           
@@ -40,16 +40,16 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                              
                              sliderInput("year","Year:",2010,2019,2015),
                              
-                             numericInput("obs","Number of observation:",15,min = 1,max = 20),
+                             numericInput("obs","Number of songs:",15,min = 1,max = 20),
                              
-                             actionButton("submitbutton", "Submit", 
+                             actionButton("submitbutton", "Search", 
                                           class = "btn btn-primary")
                              
                              
                            ),
                            mainPanel(
                              
-                             tags$label(h3('Output')),
+                             tags$label(h3('We recommend')),
                              verbatimTextOutput('contents'),
                              tableOutput("table")
                            )
@@ -57,7 +57,7 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                   ),
                   
                   tabPanel(
-                    "Rating",
+                    "Top 50",
                     mainPanel(
                       h1("Top 50 Music Rating"),
                       plotOutput("plot")
