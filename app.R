@@ -38,7 +38,7 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                           
                              ),
                              
-                             sliderInput("year","Year:",2010,2015,2019),
+                             sliderInput("year","Year:",2010,2019,2015),
                              
                              numericInput("obs","Number of observation:",15,min = 1,max = 20),
                              
